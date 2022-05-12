@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: api-menu-dev
+    image: api-menu-dev
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./src:/api-menu/src
+    ports:
+      - 7000:3000
