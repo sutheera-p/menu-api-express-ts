@@ -5,6 +5,8 @@ on:
   pull_request:
     branches: [ dev ]
   workflow_dispatch:
+env:
+  PORT: 7000
 jobs:
   build:
     runs-on: ubuntu-latest
