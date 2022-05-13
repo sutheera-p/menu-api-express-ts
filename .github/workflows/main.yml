@@ -1,0 +1,16 @@
+name: CI
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+     matrix:
+        node-version: [16.13.1]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run yarn
+        run: yarn
