@@ -18,5 +18,5 @@ jobs:
       - name: Run yarn
         run: yarn
       - name: Docker login
-        run: docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         
