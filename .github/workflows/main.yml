@@ -1,4 +1,4 @@
-name: CI
+name: Test CI
 on:
   push:
     branches: [ dev ]
@@ -22,5 +22,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2 
       - name: docker login
-        run: echo $DOCKER_USERNAME
+        run: echo ${{secrets.DOCKER_USERNAME}}
  
