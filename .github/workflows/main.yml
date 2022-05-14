@@ -5,8 +5,8 @@ on:
   pull_request:
     branches: [ dev ]
 env:
-  DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
-  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+  DOCKER_USERNAME: jaoearn
+  DOCKER_PASSWORD: Jaoearn_docker.hub
   REPO_NAME: menu-api-express-ts
   
 jobs:
@@ -22,5 +22,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2 
       - name: docker login
-        run: echo ${{secrets.DOCKER_USERNAME}}
+        run: run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
  
