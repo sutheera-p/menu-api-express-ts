@@ -27,5 +27,7 @@ jobs:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag $DOCKER_USERNAME/$REPO_NAME:${{ steps.date.outputs.date }}
 
         
