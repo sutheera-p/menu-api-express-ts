@@ -22,5 +22,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2 
       - name: docker login
-        run: run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
  
