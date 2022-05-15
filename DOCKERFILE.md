@@ -7,13 +7,17 @@ We use Dockerfile and docker-compose for build code , install dependency and cre
 ### How to run docker file
 
 - development
+
 ```bash
 `docker-compose -f docker-compose.dev.yml up -d`
 ```
+
     - docker image will be stored in folder /api-menu
 
 - production
+
 ```bash
 `docker-compose -f docker-compose.prod.yml up -d`
 ```
+
     - docker image will be stored in folder /usr/share/nginx/html
