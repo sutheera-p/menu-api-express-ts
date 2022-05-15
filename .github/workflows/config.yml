@@ -15,13 +15,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: Run yarn
         run: yarn
-  docker-login:
+  push-docker-images:
     needs:  build
     runs-on: ubuntu-latest  
     steps:
-      - uses: actions/checkout@v2 
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
       - name: docker login
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: Get current date
@@ -31,5 +37,3 @@ jobs:
         run: docker build . --file Dockerfile --tag $DOCKER_USERNAME/$REPO_NAME:${{ steps.date.outputs.date }}
       - name: Docker Push
         run: docker push $DOCKER_USERNAME/$REPO_NAME:${{ steps.date.outputs.date }}
-
-        
